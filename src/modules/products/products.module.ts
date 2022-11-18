@@ -3,6 +3,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 import { ProductsAdapter } from './adapters/products.adapter';
+
 import { ProductsHttpController } from './infrastructure/products.controller';
 import { ProductsResolver } from './infrastructure/products.resolver';
 
