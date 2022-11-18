@@ -2,8 +2,17 @@ import { Field, Int, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
 export class PageInfo {
-  @Field({ nullable: false })
+  @Field(() => String)
+  startCursor: string;
+
+  @Field(() => String)
+  endCursor: string;
+
+  @Field(() => Boolean)
   hasNextPage: boolean;
+
+  @Field(() => Boolean)
+  hasPreviousPage: boolean;
 }
 
 @ObjectType()
@@ -86,6 +95,6 @@ export class Products {
   @Field(() => [Edge])
   edges: Edge[];
 
-  @Field(() => PageInfo, { nullable: true })
-  pageInfo?: PageInfo;
+  @Field(() => PageInfo)
+  pageInfo: PageInfo;
 }

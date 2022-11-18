@@ -22,21 +22,7 @@ export class AuthAdapter {
     email: string;
     password: string;
   }) {
-    const response = await this.graphqlClient.query({
-      data: `mutation customerAccessTokenCreate {
-        customerAccessTokenCreate(input: {email: "${email}", password: "${password}"}) {
-          customerAccessToken {
-            accessToken
-          }
-          customerUserErrors {
-            message
-          }
-        }
-      }`,
-    });
-
-    console.log('response', response);
-
-    return response;
+    console.log(email, password);
+    return null;
   }
 }
